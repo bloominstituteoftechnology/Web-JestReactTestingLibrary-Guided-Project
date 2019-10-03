@@ -9,7 +9,7 @@ const useCount = (initialValue = 0, interval = 1) => {
 };
 
 export default function Counter({ user }) {
-  const [count, increment, decrement] = useCount(0, 2);
+  const [count, increment, decrement] = useCount(0, 3);
 
   return (
     <div style={{ borderColor: 'red' }} className='component'>

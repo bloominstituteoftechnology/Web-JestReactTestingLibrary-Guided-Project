@@ -32,7 +32,7 @@ describe('Counter component', () => {
     fireEvent.click(incButton);
 
     const elementWithZero = tools.queryByText(/0/);
-    const elementWithTwo = tools.queryByText(/2/);
+    const elementWithTwo = tools.queryByText(/3/);
 
     expect(elementWithZero).not.toBeInTheDocument();
     expect(elementWithTwo).toBeInTheDocument();
