@@ -18,6 +18,9 @@ describe('Counter component', () => {
   });
 
   it('shows the user', () => {
-    expect().toBeInTheDocument();
+    // we need to capture the text somehow
+    // so we can assert that it's in the document
+    const elementWithJoshText = tools.queryByText(/josh/i);
+    expect(elementWithJoshText).toBeInTheDocument();
   });
 });
