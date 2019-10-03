@@ -39,6 +39,10 @@ describe('multiply', () => {
 describe('personMaker', () => {
   it('makes a person with name and age', () => {
     expect(helpers.personMaker('peter', 4))
-      .toMatchObject({ name: 'peter', age: 4 });
+      .toMatchObject({
+        id: 'ace72b9d-034a-43eb-8eee-119cee80a86b',
+        name: 'peter',
+        age: 4,
+      });
   });
 });
