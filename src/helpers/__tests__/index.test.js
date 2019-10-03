@@ -23,6 +23,9 @@ describe('sum', () => {
   it('adds negative number correctly', () => {
     expect(helpers.sum(-1, -1)).toBe(-2);
   });
+  it('throws if fed something which is not a number', () => {
+    expect(() => helpers.sum('1', '2')).toThrow();
+  });
 });
 
 describe('multiply', () => {
