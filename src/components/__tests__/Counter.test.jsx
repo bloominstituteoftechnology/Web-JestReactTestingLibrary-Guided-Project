@@ -22,7 +22,8 @@ describe('Counter component', () => {
     expect(elementWithJoshText).toBeInTheDocument();
   });
 
-  it('displays the correct initial count', () => {
-
+  it('initial count is zero', () => {
+    const elementWithZero = tools.queryByText(/0/);
+    expect(elementWithZero).toBeInTheDocument();
   });
 });
