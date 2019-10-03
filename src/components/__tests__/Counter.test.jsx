@@ -28,7 +28,7 @@ describe('Counter component', () => {
   });
 
   it('can increment the count by clicking on the increment', () => {
-    const incButton = tools.queryByText(/increment/);
+    const incButton = tools.queryByTestId('incButton');
     fireEvent.click(incButton);
 
     const elementWithZero = tools.queryByText(/0/);
