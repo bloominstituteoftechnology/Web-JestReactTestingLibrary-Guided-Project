@@ -17,10 +17,12 @@ describe('Counter component', () => {
     tools.debug();
   });
 
-  it('shows the user', () => {
-    // we need to capture the text somehow
-    // so we can assert that it's in the document
+  it('shows the correct user', () => {
     const elementWithJoshText = tools.queryByText(/peter/i);
     expect(elementWithJoshText).toBeInTheDocument();
+  });
+
+  it('displays the correct initial count', () => {
+
   });
 });
