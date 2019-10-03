@@ -26,6 +26,9 @@ describe('sum', () => {
   it('throws if fed something which is not a number', () => {
     expect(() => helpers.sum('1', '2')).toThrow();
   });
+  it('can add three positive numbers', () => {
+    expect(helpers.sum(1, 2, 3)).toBe(6);
+  });
 });
 
 describe('multiply', () => {

@@ -4,6 +4,9 @@ export function five() {
   return 5;
 }
 
+// product guy
+// the sum function needs to support ANY number
+// of arguments (at least two)
 export function sum(a, b) {
   if (arguments.length < 2) return null;
   if (typeof a !== 'number' || typeof b !== 'number') {
