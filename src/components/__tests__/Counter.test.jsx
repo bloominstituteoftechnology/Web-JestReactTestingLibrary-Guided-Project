@@ -9,7 +9,7 @@ let tools;
 // will run before each test
 beforeEach(() => {
   cleanup();
-  tools = render(<Counter user='Josh' />);
+  tools = render(<Counter user='Peter' />);
 });
 
 describe('Counter component', () => {
@@ -20,7 +20,7 @@ describe('Counter component', () => {
   it('shows the user', () => {
     // we need to capture the text somehow
     // so we can assert that it's in the document
-    const elementWithJoshText = tools.queryByText(/josh/i);
+    const elementWithJoshText = tools.queryByText(/peter/i);
     expect(elementWithJoshText).toBeInTheDocument();
   });
 });
