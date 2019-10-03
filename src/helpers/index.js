@@ -7,12 +7,21 @@ export function five() {
 // product guy
 // the sum function needs to support ANY number
 // of arguments (at least two)
-export function sum(a, b) {
-  if (arguments.length < 2) return null;
-  if (typeof a !== 'number' || typeof b !== 'number') {
-    throw new Error('numbers required');
+export function sum(...numbers) {
+  const enoughArgs = numbers.length > 1;
+  if (!enoughArgs) return null;
+
+  const somethingNotNumber = numbers.some(number => {
+    return typeof number !== 'number';
+  });
+
+  if (somethingNotNumber) {
+    throw new Error('I want numbers');
   }
-  return a + b;
+
+  return numbers.reduce((acc, currentNumber) => {
+    return acc + currentNumber;
+  });
 }
 
 export function multiply(a, b) {
