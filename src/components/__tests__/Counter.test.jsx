@@ -16,4 +16,8 @@ describe('Counter component', () => {
   it('runs', () => {
     tools.debug();
   });
+
+  it('shows the user', () => {
+    expect().toBeInTheDocument();
+  });
 });
