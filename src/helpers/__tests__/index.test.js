@@ -11,7 +11,15 @@ describe('five', () => {
 });
 
 describe('sum', () => {
-
+  it('returns null if fed no arguments', () => {
+    expect(helpers.sum()).toBe(null);
+  });
+  it('adds positive number correctly', () => {
+    expect(helpers.sum(1, 1)).toBe(2);
+  });
+  it('adds negative number correctly', () => {
+    expect(helpers.sum(-1, -1)).toBe(-2);
+  });
 });
 
 describe('multiply', () => {
