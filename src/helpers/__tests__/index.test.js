@@ -14,6 +14,9 @@ describe('sum', () => {
   it('returns null if fed no arguments', () => {
     expect(helpers.sum()).toBe(null);
   });
+  it('returns null if fed a single argument', () => {
+    expect(helpers.sum(1)).toBe(null);
+  });
   it('adds positive number correctly', () => {
     expect(helpers.sum(1, 1)).toBe(2);
   });

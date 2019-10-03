@@ -5,7 +5,7 @@ export function five() {
 }
 
 export function sum(a, b) {
-  if (!arguments.length) return null;
+  if (arguments.length < 2) return null;
   if (typeof a !== 'number' || typeof b !== 'number') {
     throw new Error('numbers required');
   }
