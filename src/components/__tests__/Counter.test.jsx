@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import Counter from '../Counter';
 
 let tools;
@@ -25,5 +25,16 @@ describe('Counter component', () => {
   it('initial count is zero', () => {
     const elementWithZero = tools.queryByText(/0/);
     expect(elementWithZero).toBeInTheDocument();
+  });
+
+  it('can increment the count by clicking on the increment', () => {
+    const incButton = tools.queryByText(/increment/);
+    fireEvent.click(incButton);
+
+    const elementWithZero = tools.queryByText(/0/);
+    const elementWithTwo = tools.queryByText(/2/);
+
+    expect(elementWithZero).not.toBeInTheDocument();
+    expect(elementWithTwo).toBeInTheDocument();
   });
 });
