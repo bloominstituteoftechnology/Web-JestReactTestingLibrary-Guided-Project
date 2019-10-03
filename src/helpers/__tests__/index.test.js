@@ -28,6 +28,7 @@ describe('sum', () => {
   });
   it('can add three positive numbers', () => {
     expect(helpers.sum(1, 2, 3)).toBe(6);
+    expect(helpers.sum(1, 2, 3)).not.toBe(7);
   });
 });
 
@@ -36,5 +37,8 @@ describe('multiply', () => {
 });
 
 describe('personMaker', () => {
-
+  it('makes a person with name and age', () => {
+    expect(helpers.personMaker('peter', 4))
+      .toMatchObject({ name: 'peter', age: 4 });
+  });
 });
