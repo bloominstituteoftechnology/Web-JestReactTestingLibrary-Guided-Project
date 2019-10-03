@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import * as rtl from '@testing-library/react';
 import Counter from '../Counter';
 
 let tools;
@@ -8,8 +8,8 @@ let tools;
 // the code inside the callback
 // will run before each test
 beforeEach(() => {
-  cleanup();
-  tools = render(<Counter user='Peter' />);
+  rtl.cleanup();
+  tools = rtl.render(<Counter user='Peter' />);
 });
 
 describe('Counter component', () => {
@@ -32,7 +32,7 @@ describe('Counter component', () => {
     expect(elementWithZero).toBeInTheDocument();
 
     const incButton = tools.queryByTestId('incButton');
-    fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
 
     elementWithZero = tools.queryByText(/0/);
     const elementWithTwo = tools.queryByText(/3/);
