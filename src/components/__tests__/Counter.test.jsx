@@ -28,10 +28,13 @@ describe('Counter component', () => {
   });
 
   it('can increment the count by clicking on the increment', () => {
+    let elementWithZero = tools.queryByText(/0/);
+    expect(elementWithZero).toBeInTheDocument();
+
     const incButton = tools.queryByTestId('incButton');
     fireEvent.click(incButton);
 
-    const elementWithZero = tools.queryByText(/0/);
+    elementWithZero = tools.queryByText(/0/);
     const elementWithTwo = tools.queryByText(/3/);
 
     expect(elementWithZero).not.toBeInTheDocument();
