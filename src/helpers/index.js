@@ -1,5 +1,9 @@
 import uuid from 'uuid';
 
+export function five() {
+  return 5;
+}
+
 export function sum(a, b) {
   if (!arguments.length) return null;
   if (typeof a !== 'number' || typeof b !== 'number') {
